@@ -19,7 +19,7 @@ function App() {
             'w-[80dvw] sm:w-[clamp(200px,50dvw,50dvw)] aspect-[1/1.5]'
           )}>
             <Hero.PentagonImage
-              src='/public/images/doctor1.png'
+              src='images/doctor1.png'
               pentagonProps={{
                 borderColor: 'white',
                 borderWidth: 2,
@@ -32,7 +32,7 @@ function App() {
             </Hero.PentagonImage>
             <Hero.PentagonImage
               containerClassName='absolute left-[45%] top-[40%] w-[80%]'
-              src='/public/images/doctor2.png'
+              src='images/doctor2.png'
               pentagonProps={{
                 borderColor: color.cyan,
                 borderWidth: 2,

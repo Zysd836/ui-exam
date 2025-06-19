@@ -23,7 +23,7 @@ const PentagonImage: React.FC<PentagonImageProps> = ({ src, containerClassName, 
         src={src}
         className={cn(
           'object-cover',
-          'mask-center mask-contain mask-no-repeat mask-[url(pentagon.svg)]',
+          'mask-center mask-contain mask-no-repeat mask-[url(/public/pentagon.svg)]',
           'absolute',
           imageClassName
         )}
