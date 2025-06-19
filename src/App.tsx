@@ -38,9 +38,10 @@ function App() {
               pentagonProps={{
                 borderColor: color.cyan,
                 borderWidth: 2,
+                fill: color.cyan,
               }}
               imageClassName={cn(
-                'h-[calc(100%-4px)] aspect-[365/396]',
+                'h-[calc(100%-4px)] w-[calc(100%-4px)]',
               )}
             />
           </div>
