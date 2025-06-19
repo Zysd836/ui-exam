@@ -1,34 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Hero from './components/hero'
+import Pentagon from './ui/svg/Pentagon'
+import color from './utils/constants/color'
+import { cn } from './utils/style/cn'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <section
+      className={cn(
+        'w-dvw h-dvh overflow-auto overflow-x-hidden',
+        'bg-no-repeat bg-cover bg-[url(/public/images/mobile.png)] sm:bg-[url(/public/images/desktop.png)] relative',
+      )}
+    >
+      <Hero.Container className='flex sm:flex-row flex-col '>
+        <div className='flex-1'>
+          <div className={cn(
+            'relative sm:mt-32 -mt-8 -ml-12',
+            'w-[80dvw] sm:w-[clamp(200px,50dvw,50dvw)] aspect-[1/1.5]'
+          )}>
+            <Hero.PentagonImage
+              src='/public/images/doctor1.png'
+              pentagonProps={{
+                borderColor: 'white',
+                borderWidth: 2,
+              }}
+              imageClassName={cn(
+                'h-[calc(100%-24px)] aspect-[365/396]',
+              )}
+            >
+              <Pentagon className='absolute w-[16%] sm:w-[24%] -right-[6%] top-[18%] rotate-12 sm:rotate-0 -sm:right-[4%] sm:top-[4%] mix-blend-normal' fill={color.overlay} />
+            </Hero.PentagonImage>
+            <Hero.PentagonImage
+              containerClassName='absolute left-[45%] top-[40%] w-[80%]'
+              src='/public/images/doctor2.png'
+              pentagonProps={{
+                borderColor: color.cyan,
+                borderWidth: 2,
+              }}
+              imageClassName={cn(
+                'h-[calc(100%-4px)] aspect-[365/396]',
+              )}
+            />
+          </div>
+        </div>
+        <div className='flex-1 p-8 sm:ml-[15%] sm:mt-32'>
+          <div className='sm:max-w-[clamp(200px,50dvw,400px)]'>
+            <div className='sm:text-28u text-base font-semibold'>
+              Tôi không nghĩ mình đang khác đi, bởi tôi là một người sống khá đơn giản. Tôi biết những người yêu mến tôi là vì sự chân thật và giản dị.
+            </div>
+            <div className='mt-8'>
+              <div className='uppercase text-sm sm:text-28u font-bold text-yellow'>Thu quỳnh</div>
+              <div className='mt-4 text-xs sm:text-18u'>Bác sĩ</div>
+            </div>
+          </div>
+        </div>
+      </Hero.Container>
+    </section>
   )
 }
 
