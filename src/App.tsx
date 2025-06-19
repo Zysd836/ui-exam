@@ -2,6 +2,8 @@ import Hero from './components/hero'
 import Pentagon from './ui/svg/Pentagon'
 import color from './utils/constants/color'
 import { cn } from './utils/style/cn'
+import doctor1Img from '/images/doctor1.png'
+import doctor2Img from '/images/doctor2.png'
 
 function App() {
 
@@ -19,7 +21,7 @@ function App() {
             'w-[80dvw] sm:w-[clamp(200px,50dvw,50dvw)] aspect-[1/1.5]'
           )}>
             <Hero.PentagonImage
-              src='images/doctor1.png'
+              src={doctor1Img}
               pentagonProps={{
                 borderColor: 'white',
                 borderWidth: 2,
@@ -32,7 +34,7 @@ function App() {
             </Hero.PentagonImage>
             <Hero.PentagonImage
               containerClassName='absolute left-[45%] top-[40%] w-[80%]'
-              src='images/doctor2.png'
+              src={doctor2Img}
               pentagonProps={{
                 borderColor: color.cyan,
                 borderWidth: 2,
